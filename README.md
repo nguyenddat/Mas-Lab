@@ -31,7 +31,25 @@ The project is composed of containerized core services and a local agent executi
 | **Database** | Docker | `5432` | PostgreSQL 15 (`lab_db`) |
 | **Agent Runners** | Local | `8002` | Agent Execution Environment |
 
-## 🛠️ Prerequisites
+## � Technology Stack
+
+### Backend Layer
+*   **Framework**: `FastAPI` (High-performance async API)
+*   **Database ORM**: `SQLAlchemy 2.0` (Modern Python ORM)
+*   **Validation**: `Pydantic v2` (Robust data validation)
+*   **Database**: `PostgreSQL 15` (Reliable relational storage)
+
+### MCP Server Layer
+*   **Protocol**: `Model Context Protocol (MCP)` (Standard for AI context exchange)
+*   **Transport**: `SSE` (Server-Sent Events) for real-time tool stream
+*   **Integration**: `arxiv` (Python wrapper for scientific paper access)
+
+### Agent Layer
+*   **LLM Integration**: `OpenAI API` (GPT-4o/GPT-3.5)
+*   **Tooling**: `mcp` (Official Python client SDK)
+*   **Runtime**: `AsyncIO` (Concurrent execution for responsive agents)
+
+## �🛠️ Prerequisites
 
 -   [Docker Desktop](https://www.docker.com/products/docker-desktop)
 -   [Docker Compose](https://docs.docker.com/compose/install/)
