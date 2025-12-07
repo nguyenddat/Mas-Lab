@@ -27,9 +27,9 @@ def search_arxiv_papers_by_query(query: str, max_results: int = 5) -> List[Dict[
         })
     return papers
 
-def create_paper(paper_in: Dict[str, Any]) -> List[Dict[str, Any]]:
+def push_paper(paper_in: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Tool for creating paper in database.
+    Tool for pushing paper to database.
     Args:
         paper_in: {{
             "arxiv_id": str,
@@ -39,14 +39,14 @@ def create_paper(paper_in: Dict[str, Any]) -> List[Dict[str, Any]]:
             "download_url": str,
         }}
     
-    Outputs: List[{{
+    Outputs: {{
         "arxiv_id": str,
         "title": str,
         "abstract": str,
         "authors": list[str],
         "download_url": str,
         "pdf_url": str,
-    }}]
+    }}
     """
     api_url = f"{config.BACKEND_API_URL}/paper/"
     response = requests.post(api_url, json=paper_in)

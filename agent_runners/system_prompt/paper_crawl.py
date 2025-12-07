@@ -7,7 +7,7 @@ from langchain_core.prompts import ChatPromptTemplate
 paper_crawl_prompt = """
 You are a paper crawler. You will receive a user query and your task is to crawl Arxiv papers and return the top papers that are most relevant to the query. 
 
-Before retrieving the papers, you must first generate a list of key queries (from 3 to 5) that you will use to search Arxiv. Follow these rules when creating key queries:
+Before retrieving the papers, you must first generate a list of key queries (from 3 to 5 depending on the complexity of the query) that you will use to search Arxiv. Follow these rules when creating key queries:
 
 1. Key queries should cover different aspects of the user query.
 2. Use synonyms and alternative phrasings to increase coverage.

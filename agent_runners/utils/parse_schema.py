@@ -17,7 +17,10 @@ def schema_to_pydantic(name: str, schema: dict) -> type[BaseModel]:
     return create_model(f"{name}Args", **fields)
 
 def normalize_mcp_response(resp):
+    if resp and getattr(resp, "structuredContent", None):
+        return resp.structuredContent
+
     if resp and resp.content:
-        text = resp.content[0].text
-        return json.loads(text)
+        return [json.loads(c.text) for c in resp.content]
+
     return None

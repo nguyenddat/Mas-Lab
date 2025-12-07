@@ -10,7 +10,7 @@ from utils import download_pdf
 from services import PaperService
 from schemas.schema_paper import PaperCreateRequest
 
-router = APIRouter(prefix="/papers")
+router = APIRouter(prefix="/paper")
 
 @router.post("/")
 def create_paper(request: PaperCreateRequest, db: Session = Depends(get_db)):

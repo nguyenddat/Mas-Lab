@@ -35,9 +35,9 @@ async def run_agent(request: AgentRequest):
     """
     Trigger the agent with the provided parameters.
     """
-    result = await agent.run(request.dict())
+    result = await agent.run(request.question)
     return result
 
-if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8002))
-    uvicorn.run("main:app", host="localhost", port=port, reload=True)
+# if __name__ == "__main__":
+#     port = int(os.getenv("PORT", 8002))
+#     uvicorn.run("main:app", host="localhost", port=port, reload=True)
